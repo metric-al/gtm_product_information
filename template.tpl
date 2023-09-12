@@ -130,14 +130,23 @@ const Object = require('Object');
 const copyFromWindow = require('copyFromWindow');
 const callInWindow = require('callInWindow');
 
-const payload = { product: {} };
-
-const unwantedKeys = ['gtmEventId', 'gtmOnFailure', 'gtmOnSuccess', 'gtmTagId'];
-const dataKeys = Object.keys(data).filter((key) => unwantedKeys.indexOf(key) === -1);
-
-for (let i = 0; i < dataKeys.length; i++) {
-  payload.product[dataKeys[i]] = data[dataKeys[i]];
-}
+const payload = {
+  product: {
+    itemid: data.itemid || null,
+    sku: data.sku || null,
+    itemname: data.itemname || null,
+    itemprice: data.itemprice || null,
+    msrpprice: data.msrpprice || null,
+    itemsaleprice: data.itemsaleprice || null,
+    itemcategory: data.itemcategory || null,
+    itemsubcategory: data.itemsubcategory || null,
+    itemimages: data.itemimages || null,
+    itemfeaturedimage: data.itemfeaturedimage || null,
+    itemgender: data.itemgender || null,
+    itemvendor: data.itemvendor || null,
+    itembrand: data.itembrand || null
+  }
+};
 
 const productInfoTopic = copyFromWindow('_MetricalAbandonCart.EventBus.constants.topics.ACTION_PRODUCT_INFORMATION');
 const productInfoPublish = () => {
