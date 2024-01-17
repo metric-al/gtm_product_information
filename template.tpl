@@ -132,19 +132,19 @@ const callInWindow = require('callInWindow');
 
 const payload = {
   product: {
-    itemid: data.itemid || null,
-    sku: data.sku || null,
-    itemname: data.itemname || null,
-    itemprice: data.itemprice || null,
-    msrpprice: data.msrpprice || null,
-    itemsaleprice: data.itemsaleprice || null,
-    itemcategory: data.itemcategory || null,
-    itemsubcategory: data.itemsubcategory || null,
-    itemimages: data.itemimages || null,
-    itemfeaturedimage: data.itemfeaturedimage || null,
-    itemgender: data.itemgender || null,
-    itemvendor: data.itemvendor || null,
-    itembrand: data.itembrand || null
+    itemid: data.itemid,
+    sku: data.sku,
+    itemname: data.itemname,
+    itemprice: data.itemprice,
+    msrpprice: data.msrpprice,
+    itemsaleprice: data.itemsaleprice,
+    itemcategory: data.itemcategory,
+    itemsubcategory: data.itemsubcategory,
+    itemimages: data.itemimages,
+    itemfeaturedimage: data.itemfeaturedimage,
+    itemgender: data.itemgender,
+    itemvendor: data.itemvendor,
+    itembrand: data.itembrand
   }
 };
 
